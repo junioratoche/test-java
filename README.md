@@ -1,10 +1,10 @@
-# Test Java
+# Evaluación Java
 
 En la carpeta docs se adjunta el enunciado para el reto de creación de API de consulta de precios de una empresa retail dedicada al comercio electrónico.
 
 ## Solución
 
-Para dar solución al test, se consideraron los siguientes pasos:
+Para dar solución a la prueba, se consideraron los siguientes pasos:
 
 1. Análisis de requerimiento, considerando los requisitos funcionales y no funcionales solicitados para poder definir el alcance y entregables.
 
@@ -13,7 +13,7 @@ Para dar solución al test, se consideraron los siguientes pasos:
 ![Image](/docs/images/ArquitecturaHexagonalProject.jpg)
 
 3. Para la implementación se consideraron las siguientes capas principales según la arquitectura hexagonal:
-- 	/dominio (clases, excepciones)
+- 	/domain (clases, excepciones)
 - 	/application (casos de uso, servicio)
 - 	/ports (interfaces in/out)
 - 	/adapter (implementaciones)
@@ -21,12 +21,12 @@ Para dar solución al test, se consideraron los siguientes pasos:
 4. Para las pruebas:
 - 	/test
 
-5. Se aplicó el enfoque API First y se usó una herramientas de generación de código a partir del diseño de APIs con la funcionalidad dada en el siguiente link
+5. Se aplicó el enfoque API First para iniciar con el diseño de las APIS y luego la codificación y se usó una herramienta de generación de código para que a partir del diseño de APIs genere las clases en el lenguaje Java con la funcionalidad dada en el siguiente link
 https://editor.swagger.io/
 
 	![Image](/docs/images/APIFirst.jpg)
 
-6. Se aplicó el enfoque de TDD para tomar en cuenta los 5 casos de prueba solicitados.
+6. Se aplicó el enfoque de TDD para resolver los 5 casos de prueba solicitados.
 
 7. Las pruebas se realizaron a través de JUnit, Postman, Swagger. Se adjunta en la carpeta docs, el archivo Collection para las pruebas Postman.
 
