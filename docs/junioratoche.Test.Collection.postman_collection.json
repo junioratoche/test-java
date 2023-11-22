@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "13e16c69-f942-4439-abc6-500f44da8ce5",
+		"name": "junioratoche.Test.Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31322110"
+	},
+	"item": [
+		{
+			"name": "Test 1: petición a las 10:00 del día 14",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"  const responseData = pm.response.json();",
+							"",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.productId).to.exist;",
+							"  pm.expect(responseData.brandId).to.exist;",
+							"  pm.expect(responseData.priceList).to.exist;",
+							"  pm.expect(responseData.startDate).to.exist;",
+							"  pm.expect(responseData.endDate).to.exist;",
+							"  pm.expect(responseData.price).to.exist;",
+							"  pm.expect(responseData.currency).to.exist;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate that the productId is a non-zero integer\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData.productId).to.be.a('number').and.to.be.above(0, \"productId should be a non-zero integer\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate that the brandId is a non-zero integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.brandId).to.exist.and.to.be.a('number');",
+							"    pm.expect(responseData.brandId).to.be.above(0, \"Value should be a non-zero integer\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate that the priceList is a non-zero integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.priceList).to.exist.and.to.be.a('number').and.to.be.above(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/price/getByBrandAndProduct?applicationDate=2020-06-14-10.00.00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"price",
+						"getByBrandAndProduct"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14-10.00.00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test 2: petición a las 16:00 del día 14",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"productId is a non-zero positive integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.productId).to.be.a('number');",
+							"    pm.expect(responseData.productId).to.be.above(0, \"productId should be a non-zero positive integer\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"brandId is a non-zero positive integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"  ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.brandId).to.be.a('number');",
+							"    pm.expect(responseData.brandId).to.be.above(0, \"brandId should be a positive integer\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"priceList is a non-zero positive integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData.priceList).to.exist.and.to.be.a('number');",
+							"    pm.expect(responseData.priceList).to.be.above(0, \"priceList should be a non-zero positive integer\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/price/getByBrandAndProduct?applicationDate=2020-06-14-16.00.00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"price",
+						"getByBrandAndProduct"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14-16.00.00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test 3: petición a las 21:00 del día 14",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"  const responseData = pm.response.json();",
+							"",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.productId).to.exist;",
+							"  pm.expect(responseData.brandId).to.exist;",
+							"  pm.expect(responseData.priceList).to.exist;",
+							"  pm.expect(responseData.startDate).to.exist;",
+							"  pm.expect(responseData.endDate).to.exist;",
+							"  pm.expect(responseData.price).to.exist;",
+							"  pm.expect(responseData.currency).to.exist;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Product ID is a non-negative integer\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData.productId).to.be.a('number');",
+							"  pm.expect(responseData.productId).to.be.at.least(0);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Brand ID is a non-negative integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.brandId).to.be.a('number');",
+							"    pm.expect(responseData.brandId).to.be.at.least(0);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Price List is a non-negative integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.priceList).to.exist.and.to.be.a('number').and.to.be.at.least(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/price/getByBrandAndProduct?applicationDate=2020-06-14-21.00.00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"price",
+						"getByBrandAndProduct"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14-21.00.00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test 4: petición a las 10:00 del día 15",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Start date is in a valid date format\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData.startDate).to.match(/^\\d{4}-\\d{2}-\\d{2}$/);",
+							"});",
+							"",
+							"",
+							"pm.test(\"End date is in a valid date format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.endDate).to.match(/^\\d{4}-\\d{2}-\\d{2}$/);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Price is a non-negative number\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.price).to.exist.and.to.be.a('number');",
+							"  pm.expect(responseData.price).to.be.at.least(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/price/getByBrandAndProduct?applicationDate=2020-06-15-10.00.00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"price",
+						"getByBrandAndProduct"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-15-10.00.00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test 5: petición a las 21:00 del día 16",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.productId).to.exist;",
+							"    pm.expect(responseData.brandId).to.exist;",
+							"    pm.expect(responseData.priceList).to.exist;",
+							"    pm.expect(responseData.startDate).to.exist;",
+							"    pm.expect(responseData.endDate).to.exist;",
+							"    pm.expect(responseData.price).to.exist;",
+							"    pm.expect(responseData.currency).to.exist;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate that productId is a non-negative integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.productId).to.be.a('number').and.to.satisfy((value) => value >= 0, \"Value should be a non-negative integer\");",
+							"});",
+							"",
+							"pm.test(\"Validate startDate and endDate format\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData.startDate).to.match(/^\\d{4}-\\d{2}-\\d{2}-\\d{2}.\\d{2}.\\d{2}$/);",
+							"    pm.expect(responseData.endDate).to.match(/^\\d{4}-\\d{2}-\\d{2}-\\d{2}.\\d{2}.\\d{2}$/);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Price is a non-negative number\", function () {",
+							"  const responseData = pm.response.json();",
+							"",
+							"  pm.expect(responseData.price).to.be.a('number');",
+							"  pm.expect(responseData.price).to.be.at.least(0, \"Price should be non-negative\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/price/getByBrandAndProduct?applicationDate=2020-06-16-21.00.00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"price",
+						"getByBrandAndProduct"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-16-21.00.00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
