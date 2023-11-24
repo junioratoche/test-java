@@ -8,7 +8,7 @@ Para dar solución a la prueba, se consideraron los siguientes pasos:
 
 1. Análisis de requerimiento, considerando los requisitos funcionales y no funcionales solicitados para poder definir el alcance y entregables.
 
-2. Diseñar a alto nivel la arquitectura de desarrollo, y para ello se consideró un enfoque basado en Arquitectura Hexagonal, Principios SOLID, Patrones de Diseño, DDD, TDD, API First, estándar OpenAPI, Clean Code, Test Unitarios y de Integración.
+2. Diseñar a alto nivel la arquitectura de desarrollo y para ello se consideró un enfoque basado en Arquitectura Hexagonal, Principios SOLID, Patrones de Diseño, DDD, TDD, API First, estándar OpenAPI, Clean Code, Test Unitarios y de Integración.
 
 ![Image](/docs/images/ArquitecturaHexagonalProject.jpg)
 
@@ -64,4 +64,3 @@ http://localhost:8081/swagger.html
 - Open API
 - Principios SOLID
 - Arquitectura Hexagonal
-
