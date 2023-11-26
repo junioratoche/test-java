@@ -16,15 +16,13 @@ public class GetPriceUseCase implements PriceInputPort {
 
 	@Override
 	public List<Price> getAll() {
-		List<Price> priceList = entityRepositoryOutputPort.getAll();
-		return priceList;
+		return entityRepositoryOutputPort.getAll();
 	}
 
 	@Override
 	public Price getPriceByBrandAndProductInApplicationDate(LocalDateTime applicationDate, int productId, int brandId) {
-		Price price = entityRepositoryOutputPort.getPriceByBrandAndProductInApplicationDate(applicationDate, productId,
+		return entityRepositoryOutputPort.getPriceByBrandAndProductInApplicationDate(applicationDate, productId,
 				brandId);
-		return price;
 	}
 
 }

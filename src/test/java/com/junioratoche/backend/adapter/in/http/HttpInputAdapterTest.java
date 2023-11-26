@@ -12,7 +12,7 @@ class HttpInputAdapterTest {
 
     @DisplayName("Test 1: petición a las 10:00 del día 14 del producto 35455 para la brand 1 (ZARA)")
     @Test
-    void Test1() {
+    void testRequestAtTenOn14thForProduct35455AndBrand1() {
     	
         String applicationDateString = "2020-06-14-10.00.00";
         int productId = 35455;
@@ -28,7 +28,7 @@ class HttpInputAdapterTest {
     
     @DisplayName("Test 2: petición a las 16:00 del día 14 del producto 35455   para la brand 1 (ZARA)")
     @Test
-    void Test2() {
+    void testRequestAtSixteenOn14thForProduct35455AndBrand1() {
     	
         String applicationDateString = "2020-06-14-16.00.00";
         int productId = 35455;
@@ -44,7 +44,7 @@ class HttpInputAdapterTest {
     
     @DisplayName("Test 3: petición a las 21:00 del día 14 del producto 35455   para la brand 1 (ZARA)")
     @Test
-    void Test3() {
+    void testRequestAtTwentyOneOn14thForProduct35455AndBrand1() {
     	
         String applicationDateString = "2020-06-14-21.00.00";
         int productId = 35455;
@@ -60,7 +60,7 @@ class HttpInputAdapterTest {
     
     @DisplayName("Test 4: petición a las 10:00 del día 15 del producto 35455   para la brand 1 (ZARA)")
     @Test
-    void Test4() {
+    void testRequestAtTenOn15thForProduct35455AndBrand1() {
     	
         String applicationDateString = "2020-06-15-10.00.00";
         int productId = 35455;
@@ -76,7 +76,7 @@ class HttpInputAdapterTest {
     
     @DisplayName("Test 5: petición a las 21:00 del día 16 del producto 35455   para la brand 1 (ZARA)")
     @Test
-    void Test5() {
+    void testRequestAtTwentyOneOn16thForProduct35455AndBrand1() {
     	
         String applicationDateString = "2020-06-16-21.00.00";
         int productId = 35455;
@@ -93,10 +93,10 @@ class HttpInputAdapterTest {
 
     private PriceResponse performHttpGet(String applicationDateString, int productId, int brandId) {
     	
-    	String UrlqueryParams = String.format("http://localhost:8081/price/getByBrandAndProduct?applicationDate=%s&productId=%d&brandId=%d", 
+    	String urlqueryParams = String.format("http://localhost:8081/price/getByBrandAndProduct?applicationDate=%s&productId=%d&brandId=%d", 
     			applicationDateString, productId, brandId);
     	
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(UrlqueryParams, PriceResponse.class);
+        return restTemplate.getForObject(urlqueryParams, PriceResponse.class);
     }
 }

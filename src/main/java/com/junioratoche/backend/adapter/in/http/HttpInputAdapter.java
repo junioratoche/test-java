@@ -32,8 +32,7 @@ public class HttpInputAdapter {
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<PriceResponse> getAll() {
 		List<Price> priceList = priceInputPort.getAll();
-		List<PriceResponse> priceListToPriceResposeList = priceResponseMapper.priceListToPriceResponseList(priceList);
-		return priceListToPriceResposeList;
+		return priceResponseMapper.priceListToPriceResponseList(priceList);
 	}
 	
 	
@@ -49,7 +48,6 @@ public class HttpInputAdapter {
 
 		Price findByParam = priceInputPort.getPriceByBrandAndProductInApplicationDate(applicationDate, productId,
 				brandId);
-		PriceResponse priceToPriceResponse = priceResponseMapper.priceToPriceResponse(findByParam);
-		return priceToPriceResponse;
+		return priceResponseMapper.priceToPriceResponse(findByParam);
 	}
 }

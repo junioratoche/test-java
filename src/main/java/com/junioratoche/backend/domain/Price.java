@@ -10,7 +10,7 @@ public class Price {
 	private LocalDateTime endDate;
 	private Product product;
 	private int priority;
-	private double price;
+	private double priceValue;
 	private Currency currency;
 
 	public int getPriceList() {
@@ -61,12 +61,12 @@ public class Price {
 		this.priority = priority;
 	}
 
-	public double getPrice() {
-		return price;
+	public double getPriceValue() {
+		return priceValue;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setPriceValue(double priceValue) {
+		this.priceValue = priceValue;
 	}
 
 	public Currency getCurrency() {

@@ -17,7 +17,7 @@ public interface PriceResponseMapper {
 	@Mappings({ @Mapping(source = "product.productId", target = "productId"),
 			@Mapping(source = "brand.brandId", target = "brandId"),
 			@Mapping(source = "priceList", target = "priceList"), @Mapping(source = "startDate", target = "startDate"),
-			@Mapping(source = "endDate", target = "endDate"), @Mapping(source = "price", target = "price"),
+			@Mapping(source = "endDate", target = "endDate"), @Mapping(source = "priceValue", target = "price"),
 			@Mapping(source = "currency", target = "currency") })
 	PriceResponse priceToPriceResponse(Price findById);
 
