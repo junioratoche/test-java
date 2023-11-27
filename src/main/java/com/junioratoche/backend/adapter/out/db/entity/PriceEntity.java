@@ -31,7 +31,7 @@ public class PriceEntity {
 	@Column(name = "product_Id")
 	private Integer productId;
 	private Integer priority;
-	private BigDecimal price;
+	private Double price;
 	private String curr;
 
 	public Integer getId() {
@@ -90,11 +90,11 @@ public class PriceEntity {
 		this.priority = priority;
 	}
 
-	public BigDecimal getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

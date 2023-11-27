@@ -10,7 +10,7 @@ import com.junioratoche.backend.domain.Price;
 @Component
 public interface EntityRepositoryOutputPort {
 
-	public List<Price> getAll();
+	List<Price> getAll();
 
-	public Price getPriceByBrandAndProductInApplicationDate(LocalDateTime applicationDate, int productId, int brandId);
+	Price getPriceByBrandAndProductInApplicationDate(LocalDateTime applicationDate, int productId, int brandId);
 }
